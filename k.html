@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Kiara 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px 50px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 2s ease;
+      max-width: 420px;
+    }
+
+    h1 {
+      color: #e63946;
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #333;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      color: #e63946;
+      font-size: 24px;
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-110vh) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Kiara 💕</h1>
+    <p>
+      Esta página existe solo para decirte algo simple pero sincero:<br /><br />
+      <strong>te quiero</strong>.
+    </p>
+    <p>
+      Cada sonrisa tuya ilumina todo, y cada momento contigo vale oro.
+      Gracias por existir y por hacer el mundo más bonito solo siendo tú.
+    </p>
+    <p>🌹 Con cariño, de alguien que piensa en vos 🌹</p>
+  </div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = '❤';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+    }
+
+    setInterval(createHeart, 400);
+  </script>
+</body>
+</html>
